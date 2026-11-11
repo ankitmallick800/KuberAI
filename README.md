@@ -52,6 +52,8 @@ Open http://localhost:3000 and search a ticker.
 
 After this repo is on GitHub, connect that repository to the existing Vercel project instead of creating a second one.
 
+GitHub Pages publishes the static app from `.github/workflows/pages.yml`. That site calls the Vercel API at `/api`. The Pages URL is https://ankitmallick800.github.io/KuberAI/.
+
 ## Request
 
 `POST /analyze` returns a Server-Sent Events stream.
