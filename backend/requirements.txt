@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+langchain-core
+langchain-groq
+yfinance
+pandas
+ddgs
+sse-starlette

@@ -1,0 +1,160 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@theme inline {
+  --font-sans: var(--font-inter), 'Inter Fallback', ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), 'Space Grotesk Fallback', ui-sans-serif, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Menlo', monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* KuberAI signal colors */
+  --color-signal: var(--signal);
+  --color-signal-foreground: var(--signal-foreground);
+  --color-slate: var(--slate);
+  --color-cold: var(--cold);
+  --color-cold-foreground: var(--cold-foreground);
+
+  /* Agent palette */
+  --color-agent-1: var(--agent-1);
+  --color-agent-2: var(--agent-2);
+  --color-agent-3: var(--agent-3);
+  --color-agent-4: var(--agent-4);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 10px);
+}
+
+:root {
+  color-scheme: dark;
+
+  /* lifted charcoal, cooler than the old ink */
+  --background: #12181b;
+  --foreground: #eef4f2;
+
+  --card: #1b262b;
+  --card-foreground: #eef4f2;
+  --popover: #1b262b;
+  --popover-foreground: #eef4f2;
+
+  --primary: #eef4f2;
+  --primary-foreground: #102018;
+  --secondary: #243238;
+  --secondary-foreground: #eef4f2;
+
+  --muted: #1e2c32;
+  --muted-foreground: #9aada8;
+
+  --accent: #243238;
+  --accent-foreground: #eef4f2;
+
+  --destructive: #e07a72;
+
+  --border: #334248;
+  --input: #334248;
+  --ring: #7ddec4;
+
+  /* sea glass — verdict moments */
+  --signal: #7ddec4;
+  --signal-foreground: #102018;
+
+  /* muted sage — secondary UI */
+  --slate: #7f938e;
+
+  /* soft blue — disagreement moment */
+  --cold: #7eb6e8;
+  --cold-foreground: #102018;
+
+  /* four research lenses */
+  --agent-1: #6ee0c0;
+  --agent-2: #d7b0ea;
+  --agent-3: #f0c27a;
+  --agent-4: #9ec4e4;
+
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'ss01', 'cv01';
+  }
+  /* tabular figures for data-heavy panels */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum';
+  }
+  /* visible keyboard focus */
+  :focus-visible {
+    outline: 2px solid var(--signal);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Single Page PDF Export Optimization */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm;
+  }
+  body {
+    background: #ffffff !important;
+    color: #102018 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  header, footer, nav, button, [role="tablist"] {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+  .rounded-2xl, .rounded-xl, .rounded-lg {
+    border-color: #e2e8f0 !important;
+    background: #f8fafc !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+  }
+  p, span, h1, h2, h3, li {
+    color: #0f172a !important;
+  }
+  .print\:hidden {
+    display: none !important;
+  }
+}

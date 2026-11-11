@@ -1,0 +1,28 @@
+# Version Control
+.git
+.gitignore
+
+# Secrets stay out of the image. Pass GROQ_API_KEY at runtime.
+.env
+
+# IDE / Editor folders
+.idea/
+.vscode/
+.devcontainer/
+
+# Python caching
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.tox/
+
+# Local Streamlit and cache files
+.streamlit/
+cache/
+*.json
+
+# OS specific files
+.DS_Store
+Thumbs.db
