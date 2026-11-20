@@ -1,3 +1,6 @@
+<img width="1142" height="733" alt="image" src="https://github.com/user-attachments/assets/1d524a51-4e9d-4d52-b059-b91728933709" />
+<img width="1179" height="570" alt="image" src="https://github.com/user-attachments/assets/dc3b5d53-8cf4-440f-86a9-eac6a30585d3" />
+
 # KuberAI
 
 One research agent reads a stock and returns a single call: **Buy / Accumulate / Hold / Watch / Sell**.
